@@ -21,7 +21,7 @@ module Wysiwyg
         quill.on('text-change', function(){
           if (!self.updating_editor) {
             #{@updating_attribute = true }
-            #{new_text = nil ; puts 'updating'}
+            #{new_text = nil ; }
             new_text = quill.getHTML();
             #{ attrs.text = new_text }
             setImmediate(function(){ #{ @updating_attribute = false } });
@@ -39,7 +39,6 @@ module Wysiwyg
     def update_text(new_text)
       unless @updating_attribute
         @updating_editor = true
-        puts 'updating text'
          `#{quill}.setHTML(#{new_text || ''})`
         @updating_editor = false
       end
