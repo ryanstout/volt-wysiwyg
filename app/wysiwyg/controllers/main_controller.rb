@@ -28,12 +28,14 @@ module Wysiwyg
           }
         });
       }
-      
-      if attrs.autofocus
-        `quill.focus();`
-      end
 
       @computation = -> { update_text(attrs.text) }.watch!
+
+      
+      if attrs.autofocus
+        puts "FOCUS"
+        `#{@quill}.focus();`
+      end
     end
 
     def before_index_remove
