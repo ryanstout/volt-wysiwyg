@@ -28,6 +28,10 @@ module Wysiwyg
           }
         });
       }
+      
+      if attrs.autofocus
+        `quill.focus();`
+      end
 
       @computation = -> { update_text(attrs.text) }.watch!
     end
