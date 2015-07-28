@@ -33,7 +33,6 @@ module Wysiwyg
 
       
       if attrs.autofocus
-        puts "FOCUS"
         `#{@quill}.focus();`
       end
     end
